@@ -112,3 +112,9 @@ pynotes:
 		-v /home/mali/projects/docker-stacks/pynotes:/home/jovyan/work/notebooks \
 		jupyter/minimal-notebook
 
+.PHONY: jynotes
+jynotes:
+	docker run -d -p 8888:8888 \
+		-v /home/mali/projects/docker-stacks/jynotes:/home/jovyan/work/notebooks \
+		mfellner/javascript-notebook:latest
+
