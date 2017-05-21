@@ -105,3 +105,10 @@ test/%: ## run a stack container, check for jupyter server liveliness
 	done ; exit 1
 
 test-all: $(ALL_IMAGES:%=test/%) ## test all stacks
+
+.PHONY: pynotes
+pynotes: 
+	docker run -d -p 8888:8888 \
+		-v /home/mali/projects/docker-stacks/pynotes:/home/jovyan/work/notebooks \
+		jupyter/minimal-notebook
+
